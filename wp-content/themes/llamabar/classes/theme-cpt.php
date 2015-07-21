@@ -174,7 +174,7 @@ class ckCustomPostTypes {
 	    ) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Image 1',
+		    'name'    => 'Top Left Image A',
 		    'desc'    => 'Upload an image or enter an URL.',
 		    'id'      => 'products_1',
 		    'type'    => 'file',
@@ -185,7 +185,7 @@ class ckCustomPostTypes {
 		) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Image 2',
+		    'name'    => 'Top Left Image B',
 		    'desc'    => 'Upload an image or enter an URL.',
 		    'id'      => 'products_2',
 		    'type'    => 'file',
@@ -196,7 +196,7 @@ class ckCustomPostTypes {
 		) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Image 3',
+		    'name'    => 'Open Bar Image',
 		    'desc'    => 'Upload an image or enter an URL.',
 		    'id'      => 'products_3',
 		    'type'    => 'file',
@@ -207,7 +207,18 @@ class ckCustomPostTypes {
 		) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Secondary Content Title',
+		    'name'    => 'Nutritional Information',
+		    'desc'    => 'Upload an image or enter an URL.',
+		    'id'      => 'products_5',
+		    'type'    => 'file',
+		    // Optionally hide the text input for the url:
+		    'options' => array(
+		        'url' => false,
+		    ),
+		) );
+
+		$product_meta->add_field( array(
+		    'name'    => 'Secondary Section Content Title',
 		    'desc'    => 'enter the second area content title',
 		    'id'      => $prefix.'secondary_header',
 		    'type'    => 'text'
@@ -219,15 +230,7 @@ class ckCustomPostTypes {
 		    'id'      => $prefix.'ingredients',
 		    'type'    => 'wysiwyg'
 		) );
-
-		$product_meta->add_field( array(
-		    'name'    => 'Nutritional Information',
-		    'desc'    => 'enter the Nutritional content',
-		    'id'      => $prefix.'nutritional',
-		    'type'    => 'wysiwyg'
-		) );
-
- 		
+		
 
 		$ingredients_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'ingrdients_metabox',
@@ -262,7 +265,7 @@ class ckCustomPostTypes {
 	    ) );
 
 	    $about_meta->add_field( array(
-		    'name'    => 'Image 1',
+		    'name'    => 'Top Right',
 		    'desc'    => 'Upload an image or enter an URL.',
 		    'id'      => 'about_1',
 		    'type'    => 'file',
