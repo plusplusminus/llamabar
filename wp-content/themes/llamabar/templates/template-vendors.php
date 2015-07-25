@@ -22,10 +22,10 @@
 				<?php endif; ?>
 				<?php wp_reset_query(); ?>
 				<?php $terms = get_terms('location','orderby=count&hide_empty=1');?>
-				<ul id="filters">
-				  <li><button href="#" class="filter" data-filter="*">All</button></li>
+				<ul id="filters" class="list-unstyled">
+				  <li><a class="filter active" data-filter="*">All</a></li>
 					<?php foreach ( $terms as $term ) {
-       						echo '<li><button class="filter" data-filter=".' . $term->slug . '">' . $term->name . '</button></li>';
+       						echo '<li><a role="button" class="filter" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
      					} ?>
 				</ul>
 			</div>
@@ -52,7 +52,7 @@
 						  		<figure class="vendor-image">
 						  			<?php the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
 						  		</figure>
-						    	<?php the_title(); ?>
+						  		<h3 class="vendor-title"><?php the_title(); ?></h3>
 						    	<?php the_content(); ?>
 							</div>
 						<?php endwhile; ?>
