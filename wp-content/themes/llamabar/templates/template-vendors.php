@@ -53,27 +53,29 @@
 						  			<?php the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
 						  		</figure>
 						  		<h3 class="vendor-title"><?php the_title(); ?></h3>
-						    	<?php the_content(); ?>
-						    	<?php $address = get_post_meta($post->ID,'_ck_vendor_address',true); ?>
-						    	<?php $tel = get_post_meta($post->ID,'_ck_vendor_phone',true); ?>
-						    	<?php $website = get_post_meta($post->ID,'_ck_vendor_website',true); ?>
-						    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
-						    	
-						    	<?php if(!empty($tel)) : ?>
-						    		<span class="fa fa-building fa-fw"><?php echo $address;?></span>
-								 <?php endif; ?>
 
-						    	<?php if(!empty($tel)) : ?>
-						    		<span class="fa fa-mobile fa-fw"> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a></span>
-								 <?php endif; ?>
+						  		<p class="vendor-details">							    	
+							    	<?php $address = get_post_meta($post->ID,'_ck_vendor_address',true); ?>
+							    	<?php $tel = get_post_meta($post->ID,'_ck_vendor_phone',true); ?>
+							    	<?php $website = get_post_meta($post->ID,'_ck_vendor_website',true); ?>
+							    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
+							    	
+							    	<?php if(!empty($tel)) : ?>
+							    		<span class="fa fa-building fa-fw"><?php echo $address;?></span>
+									 <?php endif; ?>
 
-						     	<?php if(!empty($website)) : ?>
-						     		<span class="fa fa-globe fa-fw"> <a href="<?php echo $website;?>" target="_blank">Visit Website</a></span>
-						 		 <?php endif; ?>
+							    	<?php if(!empty($tel)) : ?>
+							    		<span class="fa fa-mobile fa-fw"> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a></span>
+									 <?php endif; ?>
 
-						    	<?php if(!empty($email)) : ?>
-						    		<span class="fa fa-envelope fa-fw"> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a></span>
-								 <?php endif; ?>
+							     	<?php if(!empty($website)) : ?>
+							     		<span class="fa fa-globe fa-fw"> <a href="<?php echo $website;?>" target="_blank">Visit Website</a></span>
+							 		 <?php endif; ?>
+
+							    	<?php if(!empty($email)) : ?>
+							    		<span class="fa fa-envelope fa-fw"> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a></span>
+									 <?php endif; ?>
+								</p>
 							</div>
 						<?php endwhile; ?>
 					</div>
