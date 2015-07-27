@@ -28,7 +28,13 @@
        						echo '<li><a role="button" class="filter" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
      					} ?>
 				</ul>
-				<a class="rect-link" href="<?php echo $wtb_link;?>" title="<?php echo $title; ?>">Become a distributor</a><br><br>
+				
+				<br>
+				<?php $distribute_link = get_post_meta( $post->ID, '_ck_vendor_distributor_link', 1 ); ?>
+				<div class="animated link-distribute">
+					<a href="<?php echo $distribute_link;?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/distribute.png" class="img-responsive visible-md visible-lg"></a>
+				</div>
+				<br>
 			</div>
 			<div class="col-md-9 section-right-content">
 

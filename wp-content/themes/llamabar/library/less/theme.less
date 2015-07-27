@@ -2,7 +2,7 @@
 
 /*----------intial declartaion of css----------*/
 * { padding: 0; margin: 0; list-style: none; }
-body { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; background: #E7E7E7; }
+body { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; background: #F6F6F6; }
 a, .btn { outline: none !important; -webkit-transition: all 0.5s ease-out 0s; -moz-transition: all 0.5s ease-out 0s; -o-transition: all 0.5s ease-out 0s; transition: all 0.5s ease-out 0s; text-decoration: none !important; }
 /*--------sticky footer or vertical footer------------*/
 .wrapper { min-height: 100%; margin: 0 auto; position: relative }
@@ -15,7 +15,10 @@ p { font-size: 12px; color: #1f2a44; letter-spacing: 0.030em; line-height: 22px;
 
 /*-----------header section styles goes here---------------*/
 #header-main { background: #1E2943; width: 100% }
-header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -ms-transition: all 0.4s; -o-transition: all 0.4s; }
+header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -ms-transition: all 0.4s; -o-transition: all 0.4s;
+  position: relative;
+  z-index: 999;
+}
 .header-top { position: relative; min-height: 81px }
 .header-top::before { position: absolute; content: ""; position: absolute; right: 0; bottom: 0; background: url(../images/right-fixed-img.png) no-repeat right bottom; width: 45px; height: 50px }
 .header-bottom { background: #C3D500; position: relative; padding-bottom: 9px; }
@@ -36,9 +39,15 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
 .enumenu_ul li:nth-child(5) a { line-height: 14px; margin-top: -3px; }
 .enumenu_ul li:nth-child(4) { margin-left: 391px }
 .enumenu_ul li a { color: #1E2943; font-size: 10px; text-transform: uppercase; display: block; letter-spacing: 0.16em; text-decoration: none; position: relative; transition: none }
-.enumenu_ul li a:hover::before { content: ""; position: absolute; top: -22px; left: 0; background: url(../images/menu-hover.png) no-repeat center center; width: 39px; height: 20px; background-size: 19px 10px; left: 50%; margin-left: -19px; }
+.enumenu_ul li a:hover::before,
+.enumenu_ul li.current-menu-item a::before,
+.enumenu_ul li.current-page-ancestor a::before { 
+  content: ""; position: absolute; top: -22px; left: 0; background: url(../images/menu-hover.png) no-repeat center center; width: 39px; height: 20px; background-size: 19px 10px; left: 50%; margin-left: -19px;
+}
 .enumenu_ul li a span { display: block }
-.enumenu_ul li a:hover { color: #fff; }
+.enumenu_ul li a:hover,
+.enumenu_ul li.current-menu-item a,
+.enumenu_ul li.current-page-ancestor a { color: #fff; }
 .menu-icon { display: none; background: url(../images/menu-icon.png) no-repeat center right; cursor: pointer; background-size: 27px 20px; width: 27px; float: right; height: 20px }
 
 
@@ -129,7 +138,7 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   width: 59%;
 }
 .link-box img { width: 100%; max-width: 100% }
-.home { text-align: center; padding-top: 74px; }
+.row-home { text-align: center; padding-top: 74px; }
 /*----------------mid section styles ends here-------*/
 
 
@@ -143,15 +152,14 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
 }
 
 // Contact
-body.page-template-template-contact{
-  background-color: #f5f5f5;
-}
+
 
 // About
 .page-template-template-about{
   blockquote{
     border: none;
     margin-bottom: 0px;
+    padding: 0px;
     p{
       color: #fff;
       text-transform: uppercase;
@@ -171,12 +179,11 @@ body.page-template-template-contact{
 // Athletes
 .athletes{
   .section-right-content{
-    padding: 0px 80px;
   }
 
   .athlete{
     .text-center();
-    padding: 0px 50px;
+    padding: 0px 40px;
     margin-bottom: 50px;
     .athlete-image img{
       margin: auto;
@@ -249,6 +256,10 @@ body.page-template-template-contact{
       }
     }
   }
+}
+
+.link-distribute:hover{
+  .tada();
 }
 
 // Sidebar
@@ -653,6 +664,9 @@ header{background:#1e2943;transition: none;}
 
 .product-image {
   margin-bottom: 35px;
+        &:hover{
+        .tada();
+      }
 }
 
 // Single Product
