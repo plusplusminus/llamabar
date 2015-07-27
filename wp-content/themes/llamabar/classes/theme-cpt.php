@@ -350,7 +350,31 @@ class ckCustomPostTypes {
 		    'type'    => 'text'
 		) );
 
-		  
+		$vendor_meta = new_cmb2_box( array(
+	        'id'            => $prefix . 'vendor_metabox',
+	        'title'         => __( 'Vendor Information', 'cmb2' ),
+	        'object_types'  => array( 'vendors', ), // Post type
+	        'context'       => 'normal',
+	        'priority'      => 'high',
+	        'show_names'    => true, // Show field names on the left
+	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+	        // 'closed'     => true, // true to keep the metabox closed by default
+	    ) );
+
+	    $vendor_meta->add_field( array(
+		    'name'    => 'Vendor Website Address',
+		    'desc'    => 'enter the vendor website URL (eg. http://www.vendor.com)',
+		    'id'      => $prefix.'vendor_website',
+		    'type'    => 'text'
+		) );
+
+	    $vendor_meta->add_field( array(
+		    'name'    => 'Vendor Email Address',
+		    'desc'    => 'enter the vendor email address',
+		    'id'      => $prefix.'vendor_email',
+		    'type'    => 'text'
+		) );
+
 		  
 	}
 
