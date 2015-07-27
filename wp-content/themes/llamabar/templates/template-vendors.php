@@ -77,7 +77,7 @@
 									 <?php endif; ?>
 								</p>
 							</div>
-							<?php if ($count % 2 == 0) echo '<div class="clearfix"></div>';?>
+							<?php if ($count % 3 == 0) echo '<div class="clearfix"></div>';?>
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
