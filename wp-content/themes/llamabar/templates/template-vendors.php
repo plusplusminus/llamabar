@@ -61,7 +61,7 @@
 							    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
 							    	
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-building fa-fw"></span> <?php echo $address;?>
+							    		<span class="fa fa-building fa-fw"></span> <?php echo $address;?><br>
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
@@ -77,6 +77,7 @@
 									 <?php endif; ?>
 								</p>
 							</div>
+							<?php if ($count % 2 == 0) echo '<div class="clearfix"></div>';?>
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
