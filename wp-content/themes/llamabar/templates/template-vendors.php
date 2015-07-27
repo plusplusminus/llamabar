@@ -61,19 +61,19 @@
 							    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
 							    	
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-building fa-fw"><?php echo $address;?></span>
+							    		<span class="fa fa-building fa-fw"></span> <?php echo $address;?>
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-mobile fa-fw"> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a></span>
+							    		<span class="fa fa-mobile fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a>
 									 <?php endif; ?>
 
 							     	<?php if(!empty($website)) : ?>
-							     		<span class="fa fa-globe fa-fw"> <a href="<?php echo $website;?>" target="_blank">Visit Website</a></span>
+							     		<span class="fa fa-globe fa-fw"></span> <a href="<?php echo $website;?>" target="_blank">Visit Website</a>
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a></span>
+							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a>
 									 <?php endif; ?>
 								</p>
 							</div>
