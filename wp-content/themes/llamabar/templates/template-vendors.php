@@ -69,11 +69,11 @@
 									 <?php endif; ?>
 
 							     	<?php if(!empty($website)) : ?>
-							     		<span class="fa fa-globe fa-fw"></span> <a href="<?php echo $website;?>" target="_blank">Visit Website</a><br>
+							     		<span class="fa fa-globe fa-fw"></span> <a href="http://<?php echo $website;?>" target="_blank">Visit Website</a><br>
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a><br>
+							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email.</a><br>
 									 <?php endif; ?>
 								</p>
 							</div>

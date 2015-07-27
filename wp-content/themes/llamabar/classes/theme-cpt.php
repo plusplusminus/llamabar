@@ -377,7 +377,7 @@ class ckCustomPostTypes {
 
 	    $vendor_meta->add_field( array(
 		    'name'    => 'Vendor Website Address',
-		    'desc'    => 'enter the vendor website URL (eg. http://www.vendor.com)',
+		    'desc'    => 'enter the vendor website URL - excl "http://" (eg. www.vendor.com)',
 		    'id'      => $prefix.'vendor_website',
 		    'type'    => 'text'
 		) );
