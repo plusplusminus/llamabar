@@ -68,7 +68,9 @@
 		<div class="fw-left">
 			<div class="right-section-1">
 				<div class="row">
-					<div class="col-lg-4 bg-bar-wrapper"></div>
+					<div class="col-lg-4 bg-bar-wrapper">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bg-wrapper.png" class="img-responsive visible-md visible-lg">
+					</div>
 					<div class="col-lg-8 section-right-content">
 						<?php $content = get_post_meta( $post->ID, '_ck_about_content', 1 ); ?>
 						<?php echo wpautop($content); ?>

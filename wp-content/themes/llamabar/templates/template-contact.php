@@ -13,6 +13,8 @@
 		<div class="row">
 			<div class="col-md-3 section-right-title">
 				<h1 class="title"><?php the_title(); ?></h1>
+				<br>
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/contact-llama.png" class="img-responsive visible-md visible-lg">
 			</div>
 			<div class="col-md-9 section-right-content">
 				<div class="row">
@@ -34,6 +36,5 @@
 		</div>
 	</div>
 </section>
-
 
 <?php get_footer(); ?>

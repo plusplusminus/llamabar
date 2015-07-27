@@ -28,6 +28,7 @@
        						echo '<li><a role="button" class="filter" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
      					} ?>
 				</ul>
+				<a class="rect-link" href="<?php echo $wtb_link;?>" title="<?php echo $title; ?>">Become a distributor</a><br><br>
 			</div>
 			<div class="col-md-9 section-right-content">
 
@@ -35,7 +36,7 @@
 				// Exclude categories on the homepage.
 
 				$query_args = array(
-					'post_type' => 'vendors', 
+					'post_type' => 'vendors',
 					'posts_per_page' => -1
 				);
 
@@ -48,7 +49,7 @@
 					<div id="vendor-grid" class="row">
 						<?php while ( have_posts() ) : the_post(); $count++;?>
 							<?php $product_terms = wp_get_object_terms($post->ID, 'location'); ?>
-						  	<div class="col-md-4 vendor mix <?php foreach ($product_terms as $product_term) echo $product_term->slug.' '; ?>">
+						  	<div class="col-md-4 col-xs-6 col-sm-4 vendor mix <?php foreach ($product_terms as $product_term) echo $product_term->slug.' '; ?>">
 						  		<figure class="vendor-image">
 						  			<?php the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
 						  		</figure>
@@ -61,7 +62,7 @@
 							    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
 							    	
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-building fa-fw"></span> <?php echo $address;?><br>
+							    		<?php echo $address;?><br>
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
@@ -73,7 +74,7 @@
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email.</a><br>
+							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email</a><br>
 									 <?php endif; ?>
 								</p>
 							</div>

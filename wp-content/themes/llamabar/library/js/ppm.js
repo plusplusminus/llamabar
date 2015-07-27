@@ -83,4 +83,12 @@ jQuery(function () {
         }
     })
 
+    jQuery('#accordion')
+      .on('show.bs.collapse', function(e) {
+        jQuery(e.target).prev('.panel-heading').addClass('active');
+      })
+      .on('hide.bs.collapse', function(e) {
+        jQuery(e.target).prev('.panel-heading').removeClass('active');
+    });
+
 });

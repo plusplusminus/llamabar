@@ -62,11 +62,9 @@
 									<?php if (!empty($ingredients)) : ?>
 										<div class="panel panel-default">
 											<div class="panel-heading" role="tab" id="headingIngre">
-											  <h4 class="panel-title">
-											    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseIngre" aria-expanded="true" aria-controls="collapseIngre">
-											      Ingredients
+											   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseIngre" aria-expanded="true" aria-controls="collapseIngre">
+											  		<h4 class="panel-title">Ingredients</h4>
 											    </a>
-											  </h4>
 											</div>
 											<div id="collapseIngre" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIngre">
 											  <div class="panel-body">
@@ -78,11 +76,9 @@
 									<?php if (!empty($ingredients)) : ?>
 										<div class="panel panel-default">
 											<div class="panel-heading" role="tab" id="headingNut">
-											  <h4 class="panel-title">
 											    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNut" aria-expanded="false" aria-controls="collapseNut">
-											      Nutritional Information
+											      <h4 class="panel-title">Nutritional Information</h4>
 											    </a>
-											  </h4>
 											</div>
 											<div id="collapseNut" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 											  <div class="panel-body">
