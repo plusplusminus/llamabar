@@ -65,15 +65,15 @@
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-mobile fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a>
+							    		<span class="fa fa-mobile fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a><br>
 									 <?php endif; ?>
 
 							     	<?php if(!empty($website)) : ?>
-							     		<span class="fa fa-globe fa-fw"></span> <a href="<?php echo $website;?>" target="_blank">Visit Website</a>
+							     		<span class="fa fa-globe fa-fw"></span> <a href="<?php echo $website;?>" target="_blank">Visit Website</a><br>
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a>
+							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" target="_blank">Send an email.</a><br>
 									 <?php endif; ?>
 								</p>
 							</div>
