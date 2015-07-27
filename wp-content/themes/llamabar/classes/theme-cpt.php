@@ -69,8 +69,8 @@ class ckCustomPostTypes {
 				'has_archive' 		=> true,
 				'rewrite' 			=> array(	"slug" => "vendor"	), // Permalinks
 				'query_var' 		=> "vendor", // This goes to the WP_Query schema
-				'supports' 			=> array(	'title',																
-												'editor',
+				'supports' 			=> array(	'title',
+												'editor',																
 												'thumbnail'
 												),
 				'show_in_nav_menus'	=> false ,
@@ -360,6 +360,13 @@ class ckCustomPostTypes {
 	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
 	        // 'closed'     => true, // true to keep the metabox closed by default
 	    ) );
+
+	    $vendor_meta->add_field( array(
+		    'name'    => 'Vendor Address',
+		    'desc'    => 'enter the vendor address',
+		    'id'      => $prefix.'vendor_address',
+		    'type'    => 'text'
+		) );
 
 	    $vendor_meta->add_field( array(
 		    'name'    => 'Vendor Phone Number',
