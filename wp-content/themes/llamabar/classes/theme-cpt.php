@@ -362,6 +362,13 @@ class ckCustomPostTypes {
 	    ) );
 
 	    $vendor_meta->add_field( array(
+		    'name'    => 'Vendor Phone Number',
+		    'desc'    => 'enter the vendor phone number (eg. (###) ### ####)',
+		    'id'      => $prefix.'vendor_phone',
+		    'type'    => 'text'
+		) );
+
+	    $vendor_meta->add_field( array(
 		    'name'    => 'Vendor Website Address',
 		    'desc'    => 'enter the vendor website URL (eg. http://www.vendor.com)',
 		    'id'      => $prefix.'vendor_website',
