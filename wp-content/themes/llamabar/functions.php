@@ -109,28 +109,6 @@ function child_sections($sections){
             ),  
         )
     );
-
-    $sections[] = array(
-        'icon'          => 'ok',
-        'icon_class'    => 'fa fa-phone',
-        'title'         => __('Contact Details', 'campuskey'),
-        'desc'          => __('<p class="description">Campus key contact information</p>', 'campuskey'),
-        'fields' => array(
-            array(
-                'id'=>'campuskey_phone_text',
-                'type' => 'text',
-                'title' => __('Phone Number Text', 'campuskey'),
-                'desc' => __('Enter the text based phone number', 'campuskey'),
-            ), 
-            array(
-                'id'=>'campuskey_phone',
-                'type' => 'text',
-                'title' => __('Phone Number', 'campuskey'),
-                'desc' => __('Enter the number based phone number', 'campuskey'),
-            ),    
-        )
-    );
-
     
 
     return $sections;
