@@ -138,7 +138,7 @@ query_posts( $query_args );
 							?>
 							<div class="item">
 								<figure class="ingredient-image">
-									<img alt="<? _e($attachment->post_title); ?>" src="<?php echo $image_attributes_large[0];?>" class="img-responsive"/>
+									<img alt="<? _e($attachment->post_title); ?>" src="x<?php echo $image_attributes_large[0];?>" class="img-responsive"/>
 									<figcaption class="ingredient-caption">
 										<span><? _e($attachment->post_title); ?></span>
 									</figcaption>
