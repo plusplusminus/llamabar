@@ -108,7 +108,7 @@ class ckCustomPostTypes {
 	    $prefix = '_ck_';
 
     	$page_vendor_meta = new_cmb2_box( array(
-            'id'            => $prefix . 'page_metabox',
+            'id'            => $prefix . 'vendor_metabox',
             'title'         => __( 'Vendor Page Options', 'cmb2' ),
             'object_types'  => array( 'page', ), // Post type
             'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-vendors.php' ),
@@ -369,7 +369,7 @@ class ckCustomPostTypes {
 		) );
 
 		$vendor_meta = new_cmb2_box( array(
-	        'id'            => $prefix . 'vendor_metabox',
+	        'id'            => $prefix . 'vendors_metabox',
 	        'title'         => __( 'Vendor Information', 'cmb2' ),
 	        'object_types'  => array( 'vendors', ), // Post type
 	        'context'       => 'normal',
