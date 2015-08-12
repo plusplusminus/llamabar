@@ -56,9 +56,9 @@
 						<?php while ( have_posts() ) : the_post(); $count++;?>
 							<?php $product_terms = wp_get_object_terms($post->ID, 'location'); ?>
 						  	<div class="col-md-4 col-xs-6 col-sm-4 vendor mix <?php foreach ($product_terms as $product_term) echo $product_term->slug.' '; ?>">
-						  		<figure class="vendor-image">
-						  			<?php the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
-						  		</figure>
+								<!-- <figure class="vendor-image">
+						  			<?php // the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
+						  		</figure> -->
 						  		<h3 class="vendor-title"><?php the_title(); ?></h3>
 
 						  		<p class="vendor-details">							    	

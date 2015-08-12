@@ -225,17 +225,6 @@ class ckCustomPostTypes {
 		) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Nutritional Information',
-		    'desc'    => 'Upload an image or enter an URL.',
-		    'id'      => 'products_5',
-		    'type'    => 'file',
-		    // Optionally hide the text input for the url:
-		    'options' => array(
-		        'url' => false,
-		    ),
-		) );
-
-		$product_meta->add_field( array(
 		    'name'    => 'Secondary Section Content Title',
 		    'desc'    => 'enter the second area content title',
 		    'id'      => $prefix.'secondary_header',
@@ -246,6 +235,13 @@ class ckCustomPostTypes {
 		    'name'    => 'Ingredients',
 		    'desc'    => 'enter the ingredients content',
 		    'id'      => $prefix.'ingredients',
+		    'type'    => 'wysiwyg'
+		) );
+
+		$product_meta->add_field( array(
+		    'name'    => 'Nutritional Information',
+		    'desc'    => 'enter the nutrititional information',
+		    'id'      => $prefix.'nutritional',
 		    'type'    => 'wysiwyg'
 		) );
 		
