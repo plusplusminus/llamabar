@@ -43,6 +43,7 @@
 
 				$query_args = array(
 					'post_type' => 'vendors',
+					'order' => 'asc',
 					'posts_per_page' => -1
 				);
 
@@ -72,7 +73,7 @@
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-mobile fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a><br>
+							    		<span class="fa fa-phone fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a><br>
 									 <?php endif; ?>
 
 							     	<?php if(!empty($website)) : ?>
@@ -80,7 +81,7 @@
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email</a><br>
+							    		<span class="fa fa-envelope-o fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email</a><br>
 									 <?php endif; ?>
 								</p>
 							</div>

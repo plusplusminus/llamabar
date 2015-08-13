@@ -10,7 +10,7 @@
 <section>
 	<div class="container-fluid clearfix">
 		<div class="row">
-			<div class="col-md-5" style="padding-left:0px; padding-right: 0px;">
+			<div class="col-md-5 same-height" style="padding-left:0px; padding-right: 0px;">
 				<?php 
 					$image_1 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_1_id', 1 ), 'full','',array('class'=>'img-responsive') );
 					$image_2 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_2_id', 1 ), 'full','',array('class'=>'img-responsive') );
@@ -22,7 +22,7 @@
 					<?php echo $image_2; ?>
 				</div>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-7 same-height">
 				<div class="right-section-1">
 					<div class="row">
 						<div class="col-md-5 section-right-title">
@@ -38,8 +38,20 @@
 								<?php endwhile; ?>
 							<?php endif; ?>
 							<?php wp_reset_query(); ?>	
+							  <?php
+								  $entries = get_post_meta( get_the_ID(), '_ck_page_links', true );
+
+								  foreach ( (array) $entries as $key => $entry ) {
+								    $img = $title = $desc = $caption = '';
+
+								    if ( isset( $entry['link'] ) )
+								  	      $link = esc_html( $entry['link'] );
+								  	 }
+								?>
+
+
 							<div class="row">
-								<a class="rect-link" href="<?php echo $wtb_link;?>" title="<?php echo $title; ?>">Where to buy</a>
+								<a class="rect-link" href="<?php echo $link;?>" title="<?php echo $title; ?>">Where to buy</a>
 							</div>
 						</div>
 					</div>
@@ -138,7 +150,7 @@ query_posts( $query_args );
 							?>
 							<div class="item">
 								<figure class="ingredient-image">
-									<img alt="<? _e($attachment->post_title); ?>" src="x<?php echo $image_attributes_large[0];?>" class="img-responsive"/>
+									<img alt="<? _e($attachment->post_title); ?>" src="<?php echo $image_attributes_large[0];?>" class="img-responsive"/>
 									<figcaption class="ingredient-caption">
 										<span><? _e($attachment->post_title); ?></span>
 									</figcaption>
