@@ -77,28 +77,18 @@
 										<?php if (!empty($ingredients)) : ?>
 											<div class="panel panel-default">
 												<div class="panel-heading" role="tab" id="headingIngre">
-												   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseIngre" aria-expanded="true" aria-controls="collapseIngre">
+												   <a href="#" data-toggle="modal" data-target="#ingredientsModal">
 												  		<h4 class="panel-title">Ingredients</h4>
 												    </a>
 												</div>
-												<div id="collapseIngre" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIngre">
-												  <div class="panel-body">
-												    <?php echo wpautop( $ingredients ); ?>
-												  </div>
-												</div>
 											</div>
 										<?php endif; ?>
-										<?php if (!empty($ingredients)) : ?>
+										<?php if (!empty($nutritional)) : ?>
 											<div class="panel panel-default">
 												<div class="panel-heading" role="tab" id="headingNut">
-												    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNut" aria-expanded="false" aria-controls="collapseNut">
+												    <a href="#" data-toggle="modal" data-target="#nutritionalModal">
 												      <h4 class="panel-title">Nutritional Information</h4>
 												    </a>
-												</div>
-												<div id="collapseNut" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-												  <div class="panel-body">
-												    <?php echo wpautop( $nutritional ); ?>
-												  </div>
 												</div>
 											</div>
 										<?php endif; ?>
@@ -207,4 +197,32 @@ query_posts( $query_args );
 
 </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="nutritionalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve"><style>.style0{fill:	#fff;}</style><polygon points="77.6,21.1 49.6,49.2 21.5,21.1 19.6,23 47.6,51.1 19.6,79.2 21.5,81.1 49.6,53 77.6,81.1 79.6,79.2 51.5,51.1 79.6,23" class="style0"/></svg></span></button>
+          <h4 class="modal-title" id="myModalLabel">Nutritional Information</h4>
+        </div>
+        <div class="modal-body">
+        	<img src="<?php echo $nutritional; ?>" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve"><style>.style0{fill:	#fff;}</style><polygon points="77.6,21.1 49.6,49.2 21.5,21.1 19.6,23 47.6,51.1 19.6,79.2 21.5,81.1 49.6,53 77.6,81.1 79.6,79.2 51.5,51.1 79.6,23" class="style0"/></svg></span></button>
+          <h4 class="modal-title" id="myModalLabel">Ingredients</h4>
+        </div>
+        <div class="modal-body">
+        	<?php echo wpautop( $ingredients ); ?>
+        </div>
+      </div>
+    </div>
+  </div>
 <?php get_footer(); ?>
