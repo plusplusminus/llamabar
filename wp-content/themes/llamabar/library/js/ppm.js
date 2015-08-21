@@ -40,11 +40,23 @@
     equalheight('.same-height');
   });
 
+  jQuery('#accordion').on('shown.bs.collapse', function () {
+    equalheight('.same-height');
+  })
+
+  jQuery('#accordion').on('hidden.bs.collapse', function () {
+    equalheight('.same-height');
+  })
+
 var bodyIsOverflowing, scrollbarWidth, originalBodyPadl, $body = jQuery(document.body)
 
 jQuery(function () {
 
     jQuery('#vendor-grid').mixItUp();
+
+    jQuery('#vendor-grid').on('mixEnd', function(e, state){
+        equalheight('.same-height');
+    });
 
     var wdwin = jQuery(window).width();
     jQuery(window).resize(function () {
