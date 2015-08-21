@@ -252,7 +252,7 @@ class ckCustomPostTypes {
 		    'name'    => 'Nutritional Information',
 		    'desc'    => 'enter the nutrititional information',
 		    'id'      => $prefix.'nutritional',
-		    'type'    => 'wysiwyg'
+		    'type'    => 'file'
 		) );
 
 		$ingredients_meta = new_cmb2_box( array(
