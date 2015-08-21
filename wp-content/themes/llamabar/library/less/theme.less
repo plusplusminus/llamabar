@@ -58,7 +58,7 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
 .enumenu_ul.desk ul li a { color: #fff; text-decoration: none; font-size: 14px; padding: 10px; }
 .enumenu_ul.desk ul li a:hover { background: #000; }
  
-.mainnavigation p { display: block; color: #fff; text-transform: uppercase; font-size: 17px; text-align: center; margin-top: 44px; letter-spacing: 0.016em; font-family: 'Montserrat', sans-serif; font-weight: 400 }
+.mainnavigation p { display: block; color: #fff; text-transform: uppercase; font-size: 17px !important; text-align: center; margin-top: 44px; letter-spacing: 0.016em; font-family: 'Montserrat', sans-serif; font-weight: 400 }
 /*-----------header section styles ends here----------------*/
 
 /*-----------mid section styles goes here-----------*/
@@ -108,7 +108,7 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   top: 110px;
   z-index: 9999;
 }
-.link-box a:hover { color: #93F80A }
+.link-box a:hover { color: #C3D500; }
 
 .link-box a::after {
   border-color: #fff;
@@ -139,7 +139,13 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   width: 59%;
 }
 .link-box img { width: 100%; max-width: 100% }
-.row-home { text-align: center; padding-top: 74px; }
+.row-home {
+  text-align: center;
+  padding-top: 74px;
+  p{
+    font-size: 14px;
+  }
+}
 /*----------------mid section styles ends here-------*/
 
 
@@ -150,6 +156,11 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   font-size: 6em;
   line-height: 1em;
   text-align: left;
+}
+
+.home-badge{
+  max-width: 300px;
+  margin: auto;
 }
 
 // Contact
@@ -252,7 +263,6 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
       letter-spacing: 0.02em;
       color: @brand-primary;
       padding-bottom: 20px;
-      border-bottom: 1px solid @brand-primary;
       a{
         text-decoration: none !important;
         &:hover{
@@ -295,7 +305,23 @@ body .gform_wrapper{
           padding: 7px 5px;
           color: #1f2a44;
           font-family: 'Open Sans',sans-serif;
-          font-weight: 100;
+          font-weight: 400;
+          background: transparent;
+          &::-webkit-input-placeholder {
+             color: #1f2a44;
+          }
+
+          &:-moz-placeholder { /* Firefox 18- */
+             color: #1f2a44;
+          }
+
+          &::-moz-placeholder {  /* Firefox 19+ */
+             color: #1f2a44;
+          }
+
+          &:-ms-input-placeholder {  
+             color: #1f2a44;
+          }
         }
       }
     }
@@ -708,7 +734,53 @@ header{background:#1e2943;transition: none;}
 
 body.page-template-template-product{
   background: #f4f4f4;
+  .section-right-content{
+    p{
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
 }
+
+.page-template-template-about{
+  .section-right-content{
+    p{
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
+}
+
+.athletes{
+  .section-right-title p{
+      font-size: 14px;
+      text-align: justify;
+  }
+}
+
+.page-template-template-contact{
+  .section-right-content p{
+        font-size: 14px;
+      text-align: justify;
+  }  
+}
+
+.ingredients{
+  p{
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+body.page-template-template-products{
+  .products_content{
+    p{
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
 .products-pages {
   .link-box {
     min-height: 550px;
@@ -746,7 +818,7 @@ body.page-template-template-product{
 .product-image {
   margin-bottom: 35px;
         &:hover{
-        .tada();
+        .pulse();
       }
 }
 
@@ -877,7 +949,6 @@ body.page-template-template-product .fw-right{
 .enumenu_ul li a:hover::before { display: none }
 .enumenu_ul li a { color: #fff; text-align: center }
 .enumenu_ul li:nth-child(4) { margin-left: 0 }
- 
 .enumenu_ul li a { font-size: 10px; }
 .link-box { position: relative;height:300px; }
 .link-box a{
@@ -928,7 +999,7 @@ h1 { font-size: 40px; }
 
 @media (max-width:375px) {
 .enumenu_ul { top: 104%; }
-.mainnavigation p { font-size: 15px; margin-top: 25px; }
+.mainnavigation p { font-size: 15px !important; margin-top: 25px; }
 .mainlogo > img { width: 100%; }
 .mainnavigation { margin-top: 0; }
 .home img { width: 90% }

@@ -156,6 +156,16 @@ class ckCustomPostTypes {
 		    'type'    => 'textarea'
 		) );
 
+	    $page_meta->add_field( array(
+		    'name'    => 'Home Page Badge',
+		    'desc'    => 'Upload an image',
+		    'id'      => $prefix.'page_badge',
+		    'type'    => 'file',
+		    // Optionally hide the text input for the url:
+		    'options' => array(
+		        'url' => false,
+		    ),
+		) );
 
 		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
 		$page_meta->add_group_field( $group_field_id, array(
@@ -244,7 +254,6 @@ class ckCustomPostTypes {
 		    'id'      => $prefix.'nutritional',
 		    'type'    => 'wysiwyg'
 		) );
-		
 
 		$ingredients_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'ingrdients_metabox',

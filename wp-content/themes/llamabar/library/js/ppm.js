@@ -36,8 +36,16 @@
     equalheight('.same-height');
   });
 
-  jQuery(window).resize(function(){
+  jQuery(window).load(function() {
     equalheight('.same-height');
+  });
+
+  jQuery(window).resize(function(){
+    equalheight('#vendor-grid .vendor');
+  });
+
+  jQuery(window).resize(function(){
+    equalheight('#vendor-grid .vendor');
   });
 
 var bodyIsOverflowing, scrollbarWidth, originalBodyPadl, $body = jQuery(document.body)

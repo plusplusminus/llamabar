@@ -1,3 +1,4 @@
+<?php global $post; ?>
 <section>
 	<div id="mid-container">
 		<div class="container">
@@ -8,7 +9,9 @@
 							
 							<?php if ( have_posts() ) : ?>
 								<?php while ( have_posts() ) : the_post(); ?>
+									<?php $badge = get_post_meta($post->ID,'_ck_page_badge',true); ?>
 									
+									<img src="<?php echo $badge; ?>" class="img-responsive home-badge">
 									<?php the_content();?>
 											
 								<?php endwhile; ?>

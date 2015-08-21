@@ -51,8 +51,9 @@
 		<div class="col-md-8 col-md-offset-2">
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					
-					<?php the_content();?>
+					<div class="products_content">
+						<?php the_content();?>
+					</div>
 							
 				<?php endwhile; ?>
 			<?php endif; ?>

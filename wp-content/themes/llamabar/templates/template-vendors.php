@@ -31,7 +31,7 @@
 				
 				<br>
 				<?php $distribute_link = get_post_meta( $post->ID, '_ck_vendor_distributor_link', 1 ); ?>
-				<div class="animated link-distribute">
+				<div class="link-distribute">
 					<a href="<?php echo $distribute_link;?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/distribute.png" class="img-responsive visible-md visible-lg"></a>
 				</div>
 				<br>
@@ -88,7 +88,7 @@
 									 <?php endif; ?>
 								</p>
 							</div>
-							<?php if ($count % 3 == 0) echo '<div class="clearfix"></div>';?>
+							
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
