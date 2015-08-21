@@ -43,7 +43,7 @@
 						<?php if ( have_posts() ) : $count = 0; ?>
 							<div class="row">
 								<?php while ( have_posts() ) : the_post(); $count++;?>
-								  	<div class="col-md-6 athlete">
+								  	<div class="col-sm-6 athlete">
 								  		<figure class="athlete-image">
 								  			<?php the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
 								  		</figure>

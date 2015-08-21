@@ -120,9 +120,18 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   text-align: center;
   text-transform: uppercase;
   top: 110px;
-  z-index: 9999;
+  z-index: 200;
+  .transition(.8s);
 }
-.link-box a:hover { color: #C3D500; }
+.link-box a:hover { 
+  color: #C3D500;
+  &::after {
+    border-color: #C3D500; 
+  }
+  &::before {
+    border-color: #C3D500;
+  }
+}
 
 .link-box a::after {
   border-color: #fff;
@@ -384,9 +393,13 @@ footer { width: 100%; bottom: 0; position: absolute }
 }
 
 .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
   bottom: 0;
-  height: 110%;
-  z-index: 1090;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
 }
 .modal-content{
   border-width: 10px;
@@ -660,7 +673,16 @@ header{background:#1e2943;transition: none;}
   margin-top: 25px;
   z-index: 9999;
 
-  &:hover { color: #c3D500 }
+  &:hover { 
+    color: #c3D500;
+    &::after {
+      border-color: #c3D500;
+    }
+    &::before {
+      border-color: #c3D500;
+    }
+
+   }
 
   &::after {
     border-color: #1E2943;
@@ -1042,6 +1064,22 @@ h1 { font-size: 40px; }
 .mainnavigation { margin-top: 0; }
 .home img { width: 90% }
 .header-bottom::before { width: 97%; }
+}
+
+.page-template-template-team .widget {
+  width:100%;
+  @media(min-width:@screen-sm-min) {
+    width:50%;
+    float:left;
+    max-height: 600px;
+    overflow: auto;
+  }
+  @media(min-width:@screen-md-min) {
+    width:100%;
+    float:none;
+    max-height: 100%;
+    overflow: auto;
+  }
 }
 
 
