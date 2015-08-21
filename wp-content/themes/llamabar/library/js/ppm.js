@@ -36,9 +36,10 @@
     equalheight('.same-height');
   });
 
-  jQuery(window).resize(function(){
+  jQuery(window).load(function() {
     equalheight('.same-height');
   });
+
 
   jQuery('#accordion').on('shown.bs.collapse', function () {
     equalheight('.same-height');
@@ -48,6 +49,15 @@
     equalheight('.same-height');
   })
 
+  jQuery(window).resize(function(){
+    equalheight('#vendor-grid .vendor');
+  });
+
+  jQuery(window).resize(function(){
+    equalheight('#vendor-grid .vendor');
+  });
+
+
 var bodyIsOverflowing, scrollbarWidth, originalBodyPadl, $body = jQuery(document.body)
 
 jQuery(function () {
@@ -55,7 +65,7 @@ jQuery(function () {
     jQuery('#vendor-grid').mixItUp();
 
     jQuery('#vendor-grid').on('mixEnd', function(e, state){
-        equalheight('.same-height');
+        equalheight('#vendor-grid .vendor');
     });
 
     var wdwin = jQuery(window).width();

@@ -22,7 +22,16 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
 .header-top { position: relative; min-height: 81px }
 .header-top::before { position: absolute; content: ""; position: absolute; right: 0; bottom: 0; background: url(../images/right-fixed-img.png) no-repeat right bottom; width: 45px; height: 50px }
 .header-bottom { background: #C3D500; position: relative; padding-bottom: 9px; }
-.header-bottom::before { position: absolute; content: ""; top: -67px; background: url(../images/header-top-img.png) no-repeat center center; width: 358px; height: 93px; left: 50%; margin-left: -179px }
+.header-bottom::before { 
+    position: absolute;
+    content: "";
+    top: -65px;
+    background: url(../images/header-top-img.png) no-repeat center center;
+    width: 354px;
+    height: 83px;
+    left: 50%;
+    margin-left: -179px;
+}
 .header-bottom::after { content: ""; position: absolute; left: 50%; bottom: -9px; background: url(../images/header-arrow.png) no-repeat right bottom; width: 18px; height: 9px; background-size: 18px 9px; margin-left: -8px; }
 .social-media ul { float: right; margin-right: 12px; margin-bottom: 0; margin-top: 37px; }
 .social-media ul li { display: inline-block; margin-left: 0; }
@@ -58,7 +67,7 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
 .enumenu_ul.desk ul li a { color: #fff; text-decoration: none; font-size: 14px; padding: 10px; }
 .enumenu_ul.desk ul li a:hover { background: #000; }
  
-.mainnavigation p { display: block; color: #fff; text-transform: uppercase; font-size: 17px; text-align: center; margin-top: 44px; letter-spacing: 0.016em; font-family: 'Montserrat', sans-serif; font-weight: 400 }
+.mainnavigation p { display: block; color: #fff; text-transform: uppercase; font-size: 17px !important; text-align: center; margin-top: 44px; letter-spacing: 0.016em; font-family: 'Montserrat', sans-serif; font-weight: 400 }
 /*-----------header section styles ends here----------------*/
 
 /*-----------mid section styles goes here-----------*/
@@ -77,7 +86,12 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
   -o-background-size: cover;
   background-size: cover; 
 }
-.banner h1 { padding-top: 116px; line-height: 47px; padding-left: 28px; margin-bottom: 15px; }
+.banner h1 { 
+  padding-top: 116px; 
+  line-height: 47px; 
+  padding-left: 28px; 
+  margin-bottom: 15px; 
+}
 a.btn { font-size: 10px; text-transform: uppercase; display: inline-block; letter-spacing: 0.16em; color: #fff; text-align: center; background: url(../images/button-icon.png) no-repeat right 0 #1f2a44; border: 0; border-radius: 0; padding: 16px 28px 14px 12px }
 a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D500 }
 .banner a { margin-left: 28px }
@@ -108,7 +122,7 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   top: 110px;
   z-index: 9999;
 }
-.link-box a:hover { color: #93F80A }
+.link-box a:hover { color: #C3D500; }
 
 .link-box a::after {
   border-color: #fff;
@@ -139,7 +153,13 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   width: 59%;
 }
 .link-box img { width: 100%; max-width: 100% }
-.row-home { text-align: center; padding-top: 74px; }
+.row-home {
+  text-align: center;
+  padding-top: 74px;
+  p{
+    font-size: 14px;
+  }
+}
 /*----------------mid section styles ends here-------*/
 
 
@@ -147,9 +167,16 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
 /*----------------Individual Pages  styles goes here-----------*/
 // Home
 .banner h1{
-  font-size: 6em;
-  line-height: 1em;
+  @media(min-width:@screen-md-min) {
+    font-size: 6em;
+    line-height: 1em;
+  }
   text-align: left;
+}
+
+.home-badge{
+  max-width: 300px;
+  margin: auto;
 }
 
 // Contact
@@ -252,7 +279,6 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
       letter-spacing: 0.02em;
       color: @brand-primary;
       padding-bottom: 20px;
-      border-bottom: 1px solid @brand-primary;
       a{
         text-decoration: none !important;
         &:hover{
@@ -304,7 +330,23 @@ body .gform_wrapper{
           padding: 7px 5px;
           color: #1f2a44;
           font-family: 'Open Sans',sans-serif;
-          font-weight: 100;
+          font-weight: 400;
+          background: transparent;
+          &::-webkit-input-placeholder {
+             color: #1f2a44;
+          }
+
+          &:-moz-placeholder { /* Firefox 18- */
+             color: #1f2a44;
+          }
+
+          &::-moz-placeholder {  /* Firefox 19+ */
+             color: #1f2a44;
+          }
+
+          &:-ms-input-placeholder {  
+             color: #1f2a44;
+          }
         }
       }
     }
@@ -666,28 +708,32 @@ header{background:#1e2943;transition: none;}
 }
 
 .item {
-  width: 25%;
-  float: left;
+  width: 100%;
+
   margin-bottom: 35px;
 
   img {
     margin: auto;
   }
 
-  &.item-content {
-    width: 40%;
-  }
+  @media(min-width:@screen-sm-min) {
+    width: 25%;
+    float: left;
+    &.item-content {
+      width: 40%;
+    }
 
-  &:nth-child(2) {
-    width: 40%;
-  }
+    &:nth-child(2) {
+      width: 40%;
+    }
 
-  &:nth-child(3) {
-    width: 20%;
-  }
+    &:nth-child(3) {
+      width: 20%;
+    }
 
-  &:nth-child(4n) {
-    clear: both;
+    &:nth-child(4n) {
+      clear: both;
+    }
   }
 
   .ingredient-image {
@@ -717,7 +763,53 @@ header{background:#1e2943;transition: none;}
 
 body.page-template-template-product{
   background: #f4f4f4;
+  .section-right-content{
+    p{
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
 }
+
+.page-template-template-about{
+  .section-right-content{
+    p{
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
+}
+
+.athletes{
+  .section-right-title p{
+      font-size: 14px;
+      text-align: justify;
+  }
+}
+
+.page-template-template-contact{
+  .section-right-content p{
+        font-size: 14px;
+      text-align: justify;
+  }  
+}
+
+.ingredients{
+  p{
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+body.page-template-template-products{
+  .products_content{
+    p{
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
 .products-pages {
   .link-box {
     min-height: 550px;
@@ -755,7 +847,7 @@ body.page-template-template-product{
 .product-image {
   margin-bottom: 35px;
         &:hover{
-        .tada();
+        .pulse();
       }
 }
 
@@ -886,7 +978,6 @@ body.page-template-template-product .fw-right{
 .enumenu_ul li a:hover::before { display: none }
 .enumenu_ul li a { color: #fff; text-align: center }
 .enumenu_ul li:nth-child(4) { margin-left: 0 }
- 
 .enumenu_ul li a { font-size: 10px; }
 .link-box { position: relative;height:300px; }
 .link-box a{
@@ -937,7 +1028,7 @@ h1 { font-size: 40px; }
 
 @media (max-width:375px) {
 .enumenu_ul { top: 104%; }
-.mainnavigation p { font-size: 15px; margin-top: 25px; }
+.mainnavigation p { font-size: 15px !important; margin-top: 25px; }
 .mainlogo > img { width: 100%; }
 .mainnavigation { margin-top: 0; }
 .home img { width: 90% }
