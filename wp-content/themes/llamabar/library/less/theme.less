@@ -263,8 +263,17 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   }
 }
 
-.link-distribute:hover{
-  .tada();
+.link-distribute {
+  perspective: 500px;
+  img {
+    
+    transform-origin: left;
+    .rotateY(0deg);
+    .transition( 0.8s);
+    &:hover {
+      .rotateY(30deg);
+    }
+  }
 }
 
 // Sidebar
