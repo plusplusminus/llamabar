@@ -8,91 +8,103 @@
 <?php global $post; ?>
 
 <section>
-	<div class="fw-container clearfix">
-		<div class="fw-left">
-			<?php 
-				$image_1 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_1_id', 1 ), 'full','',array('class'=>'img-responsive') );
-				$image_2 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_2_id', 1 ), 'full','',array('class'=>'img-responsive') );
-			?>
-			<div class="products-image-1">
-				<?php echo $image_1; ?>
-			</div>
-			<div class="products-image-2">
-				<?php echo $image_2; ?>
-			</div>
-		</div>
-		<div class="fw-right">
-			<div class="right-section-1">
-				<div class="row">
-					<div class="col-md-4 section-right-title">
-						<?php $wtb_link = get_post_meta( $post->ID, '_ck_wtb_link', 1 ); ?>
-						<h1 class="title"><?php the_title(); ?></h1>
-						<a class="rect-link" href="<?php echo $wtb_link;?>" title="<?php echo $title; ?>">Where to buy</a>
-					</div>
-					<div class="col-md-8 section-right-content">
-						<?php if ( have_posts() ) : ?>
-							<?php while ( have_posts() ) : the_post(); ?>
-								
-								<?php the_content();?>
-										
-							<?php endwhile; ?>
-						<?php endif; ?>
-						<?php wp_reset_query(); ?>	
-					</div>
+	<div class="container-fluid clearfix">
+		<div class="row">
+			<div class="col-md-5 same-height" style="padding-left:0px; padding-right: 0px;">
+				<?php 
+					$image_1 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_1_id', 1 ), 'full','',array('class'=>'img-responsive') );
+					$image_2 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_2_id', 1 ), 'full','',array('class'=>'img-responsive') );
+				?>
+				<div class="products-image-1">
+					<?php echo $image_1; ?>
+				</div>
+				<div class="products-image-2">
+					<?php echo $image_2; ?>
 				</div>
 			</div>
-			<div class="right-section-2">
-				<div class="row">
-					<div class="col-md-4 section-right-title">
-						<?php $sub_header = get_post_meta( $post->ID, '_ck_secondary_header', 1 ); ?>
-						<span class="title"><?php echo $sub_header; ?></span>
-					</div>
-					<div class="col-md-8 section-right-content">
-						<?php 
-							$image_3 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_3_id', 1 ), 'full','',array('class'=>'img-responsive') );
-						?>
-						<div class="product-image-3">
-							<?php echo $image_3; ?>
+			<div class="col-md-7 same-height">
+				<div class="right-section-1">
+					<div class="row">
+						<div class="col-md-5 section-right-title">
+							<?php $wtb_link = get_post_meta( $post->ID, '_ck_wtb_link', 1 ); ?>
+							<h1 class="title"><?php the_title(); ?></h1>
 						</div>
-						<div class="product-info">
-							<?php $ingredients = get_post_meta( $post->ID, '_ck_ingredients', true ); ?>
-							<?php $nutritional = get_post_meta( $post->ID, '_ck_nutritional', true ); ?>
-							<?php if (!empty($ingredients) || !empty($nutritional)) : ?>
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<?php if (!empty($ingredients)) : ?>
-										<div class="panel panel-default">
-											<div class="panel-heading" role="tab" id="headingIngre">
-											  <h4 class="panel-title">
-											    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseIngre" aria-expanded="true" aria-controls="collapseIngre">
-											      Ingredients
-											    </a>
-											  </h4>
-											</div>
-											<div id="collapseIngre" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIngre">
-											  <div class="panel-body">
-											    <?php echo wpautop( $ingredients ); ?>
-											  </div>
-											</div>
-										</div>
-									<?php endif; ?>
-									<?php if (!empty($ingredients)) : ?>
-										<div class="panel panel-default">
-											<div class="panel-heading" role="tab" id="headingNut">
-											  <h4 class="panel-title">
-											    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNut" aria-expanded="false" aria-controls="collapseNut">
-											      Nutritional Information
-											    </a>
-											  </h4>
-											</div>
-											<div id="collapseNut" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											  <div class="panel-body">
-											    <?php echo wpautop( $nutritional ); ?>
-											  </div>
-											</div>
-										</div>
-									<?php endif; ?>
-								</div>
+						<div class="col-md-7 section-right-content">
+							<?php if ( have_posts() ) : ?>
+								<?php while ( have_posts() ) : the_post(); ?>
+									
+									<?php the_content();?>
+											
+								<?php endwhile; ?>
 							<?php endif; ?>
+							<?php wp_reset_query(); ?>	
+							  <?php
+								  $entries = get_post_meta( get_the_ID(), '_ck_page_links', true );
+
+								  foreach ( (array) $entries as $key => $entry ) {
+								    $img = $title = $desc = $caption = '';
+
+								    if ( isset( $entry['link'] ) )
+								  	      $link = esc_html( $entry['link'] );
+								  	 }
+								?>
+
+
+							<div class="row">
+								<a class="rect-link" href="<?php echo $link;?>" title="<?php echo $title; ?>">Where to buy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right-section-2">
+					<div class="row">
+						<div class="col-md-5 section-right-title">
+							<?php $sub_header = get_post_meta( $post->ID, '_ck_secondary_header', 1 ); ?>
+							<span class="title"><?php echo $sub_header; ?></span>
+						</div>
+						<div class="col-md-7 section-right-content">
+							<?php 
+								$image_3 = wp_get_attachment_image( get_post_meta( $post->ID, 'products_3_id', 1 ), 'full','',array('class'=>'img-responsive') );
+							?>
+							<div class="product-image-3">
+								<?php echo $image_3; ?>
+							</div>
+							<div class="product-info">
+								<?php $ingredients = get_post_meta( $post->ID, '_ck_ingredients', true ); ?>
+								<?php $nutritional = get_post_meta( $post->ID, '_ck_nutritional', true ); ?>
+								<?php if (!empty($ingredients) || !empty($nutritional)) : ?>
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<?php if (!empty($ingredients)) : ?>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="headingIngre">
+												   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseIngre" aria-expanded="true" aria-controls="collapseIngre">
+												  		<h4 class="panel-title">Ingredients</h4>
+												    </a>
+												</div>
+												<div id="collapseIngre" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIngre">
+												  <div class="panel-body">
+												    <?php echo wpautop( $ingredients ); ?>
+												  </div>
+												</div>
+											</div>
+										<?php endif; ?>
+										<?php if (!empty($ingredients)) : ?>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="headingNut">
+												    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNut" aria-expanded="false" aria-controls="collapseNut">
+												      <h4 class="panel-title">Nutritional Information</h4>
+												    </a>
+												</div>
+												<div id="collapseNut" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+												  <div class="panel-body">
+												    <?php echo wpautop( $nutritional ); ?>
+												  </div>
+												</div>
+											</div>
+										<?php endif; ?>
+									</div>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -28,6 +28,13 @@
        						echo '<li><a role="button" class="filter" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
      					} ?>
 				</ul>
+				
+				<br>
+				<?php $distribute_link = get_post_meta( $post->ID, '_ck_vendor_distributor_link', 1 ); ?>
+				<div class="animated link-distribute">
+					<a href="<?php echo $distribute_link;?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/distribute.png" class="img-responsive visible-md visible-lg"></a>
+				</div>
+				<br>
 			</div>
 			<div class="col-md-9 section-right-content">
 
@@ -35,7 +42,8 @@
 				// Exclude categories on the homepage.
 
 				$query_args = array(
-					'post_type' => 'vendors', 
+					'post_type' => 'vendors',
+					'order' => 'asc',
 					'posts_per_page' => -1
 				);
 
@@ -48,8 +56,13 @@
 					<div id="vendor-grid" class="row">
 						<?php while ( have_posts() ) : the_post(); $count++;?>
 							<?php $product_terms = wp_get_object_terms($post->ID, 'location'); ?>
-						  	<div class="col-md-4 vendor mix <?php foreach ($product_terms as $product_term) echo $product_term->slug.' '; ?>">
-						  		
+
+
+						  	<div class="col-md-4 col-xs-6 col-sm-4 vendor mix <?php foreach ($product_terms as $product_term) echo $product_term->slug.' '; ?>">
+								<!-- <figure class="vendor-image">
+						  			<?php // the_post_thumbnail('large',array('class'=>'img-responsive')); ?>
+						  		</figure> -->
+
 						  		<h3 class="vendor-title"><?php the_title(); ?></h3>
 
 						  		<p class="vendor-details">							    	
@@ -59,11 +72,11 @@
 							    	<?php $email = get_post_meta($post->ID,'_ck_vendor_email',true); ?>
 							    	
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-building fa-fw"></span> <?php echo $address;?><br>
+							    		<?php echo $address;?><br>
 									 <?php endif; ?>
 
 							    	<?php if(!empty($tel)) : ?>
-							    		<span class="fa fa-mobile fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a><br>
+							    		<span class="fa fa-phone fa-fw"></span> <a href="tel:<?php echo $tel;?>" target="_blank"><?php echo $tel; ?></a><br>
 									 <?php endif; ?>
 
 							     	<?php if(!empty($website)) : ?>
@@ -71,7 +84,7 @@
 							 		 <?php endif; ?>
 
 							    	<?php if(!empty($email)) : ?>
-							    		<span class="fa fa-envelope fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email.</a><br>
+							    		<span class="fa fa-envelope-o fa-fw"></span> <a href="mailto:<?php echo $email;?>" >Send an email</a><br>
 									 <?php endif; ?>
 								</p>
 							</div>

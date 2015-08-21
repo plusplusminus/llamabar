@@ -27,15 +27,19 @@
 
 		<?php if ( have_posts() ) : ?>
 			<div class="row">
-				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="col-md-6">
-						<figure class="product-image">
-							<a href="<?php the_permalink();?>">
-								<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
-							</a>
-						</figure>
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="col-md-6">
+								<figure class="product-image animated">
+									<a href="<?php the_permalink();?>">
+										<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+									</a>
+								</figure>
+							</div>
+						<?php endwhile; ?>
 					</div>
-				<?php endwhile; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 		<?php wp_reset_query(); ?>

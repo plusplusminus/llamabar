@@ -107,7 +107,25 @@ class ckCustomPostTypes {
 	    // Start with an underscore to hide fields from custom fields list
 	    $prefix = '_ck_';
 
-	    
+    	$page_vendor_meta = new_cmb2_box( array(
+            'id'            => $prefix . 'vendor_metabox',
+            'title'         => __( 'Vendor Page Options', 'cmb2' ),
+            'object_types'  => array( 'page', ), // Post type
+            'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-vendors.php' ),
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true, // Show field names on the left
+            // 'cmb_styles' => false, // false to disable the CMB stylesheet
+            // 'closed'     => true, // true to keep the metabox closed by default
+        ) );
+
+	    $page_vendor_meta->add_field( array(
+		    'name'    => 'Distributor link',
+		    'desc'    => 'enter the link to the Distributor page',
+		    'id'      => $prefix.'vendor_distributor_link',
+		    'type'    => 'text'
+		) );
+
 	    $page_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'page_metabox',
 	        'title'         => __( 'Page Meta', 'cmb2' ),
@@ -207,17 +225,6 @@ class ckCustomPostTypes {
 		) );
 
 		$product_meta->add_field( array(
-		    'name'    => 'Nutritional Information',
-		    'desc'    => 'Upload an image or enter an URL.',
-		    'id'      => 'products_5',
-		    'type'    => 'file',
-		    // Optionally hide the text input for the url:
-		    'options' => array(
-		        'url' => false,
-		    ),
-		) );
-
-		$product_meta->add_field( array(
 		    'name'    => 'Secondary Section Content Title',
 		    'desc'    => 'enter the second area content title',
 		    'id'      => $prefix.'secondary_header',
@@ -228,6 +235,13 @@ class ckCustomPostTypes {
 		    'name'    => 'Ingredients',
 		    'desc'    => 'enter the ingredients content',
 		    'id'      => $prefix.'ingredients',
+		    'type'    => 'wysiwyg'
+		) );
+
+		$product_meta->add_field( array(
+		    'name'    => 'Nutritional Information',
+		    'desc'    => 'enter the nutrititional information',
+		    'id'      => $prefix.'nutritional',
 		    'type'    => 'wysiwyg'
 		) );
 		
@@ -351,7 +365,7 @@ class ckCustomPostTypes {
 		) );
 
 		$vendor_meta = new_cmb2_box( array(
-	        'id'            => $prefix . 'vendor_metabox',
+	        'id'            => $prefix . 'vendors_metabox',
 	        'title'         => __( 'Vendor Information', 'cmb2' ),
 	        'object_types'  => array( 'vendors', ), // Post type
 	        'context'       => 'normal',
@@ -388,7 +402,6 @@ class ckCustomPostTypes {
 		    'id'      => $prefix.'vendor_email',
 		    'type'    => 'text'
 		) );
-
 		  
 	}
 

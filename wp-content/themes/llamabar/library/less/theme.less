@@ -2,7 +2,7 @@
 
 /*----------intial declartaion of css----------*/
 * { padding: 0; margin: 0; list-style: none; }
-body { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; background: #E7E7E7; }
+body { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; background: #F6F6F6; }
 a, .btn { outline: none !important; -webkit-transition: all 0.5s ease-out 0s; -moz-transition: all 0.5s ease-out 0s; -o-transition: all 0.5s ease-out 0s; transition: all 0.5s ease-out 0s; text-decoration: none !important; }
 /*--------sticky footer or vertical footer------------*/
 .wrapper { min-height: 100%; margin: 0 auto; position: relative }
@@ -15,7 +15,10 @@ p { font-size: 12px; color: #1f2a44; letter-spacing: 0.030em; line-height: 22px;
 
 /*-----------header section styles goes here---------------*/
 #header-main { background: #1E2943; width: 100% }
-header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -ms-transition: all 0.4s; -o-transition: all 0.4s; }
+header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -ms-transition: all 0.4s; -o-transition: all 0.4s;
+  position: relative;
+  z-index: 999;
+}
 .header-top { position: relative; min-height: 81px }
 .header-top::before { position: absolute; content: ""; position: absolute; right: 0; bottom: 0; background: url(../images/right-fixed-img.png) no-repeat right bottom; width: 45px; height: 50px }
 .header-bottom { background: #C3D500; position: relative; padding-bottom: 9px; }
@@ -36,9 +39,15 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
 .enumenu_ul li:nth-child(5) a { line-height: 14px; margin-top: -3px; }
 .enumenu_ul li:nth-child(4) { margin-left: 391px }
 .enumenu_ul li a { color: #1E2943; font-size: 10px; text-transform: uppercase; display: block; letter-spacing: 0.16em; text-decoration: none; position: relative; transition: none }
-.enumenu_ul li a:hover::before { content: ""; position: absolute; top: -22px; left: 0; background: url(../images/menu-hover.png) no-repeat center center; width: 39px; height: 20px; background-size: 19px 10px; left: 50%; margin-left: -19px; }
+.enumenu_ul li a:hover::before,
+.enumenu_ul li.current-menu-item a::before,
+.enumenu_ul li.current-page-ancestor a::before { 
+  content: ""; position: absolute; top: -22px; left: 0; background: url(../images/menu-hover.png) no-repeat center center; width: 39px; height: 20px; background-size: 19px 10px; left: 50%; margin-left: -19px;
+}
 .enumenu_ul li a span { display: block }
-.enumenu_ul li a:hover { color: #fff; }
+.enumenu_ul li a:hover,
+.enumenu_ul li.current-menu-item a,
+.enumenu_ul li.current-page-ancestor a { color: #fff; }
 .menu-icon { display: none; background: url(../images/menu-icon.png) no-repeat center right; cursor: pointer; background-size: 27px 20px; width: 27px; float: right; height: 20px }
 
 
@@ -61,7 +70,8 @@ header { width: 100%; transition: all 0.4s; -webkit-transition: all 0.4s; -moz-t
   height: 431px; 
   background-position: center center; 
   background-repeat: no-repeat; 
-  background-attachment: fixed;   
+  // background-attachment: fixed;
+  background-size: cover; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -74,7 +84,8 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
 .page-link { overflow: hidden; }
 .link-box { 
   position: relative;
-  height:222px;
+  height:245px;
+  background-size: cover !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -86,7 +97,6 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   display: inline-block;
   font-size: 17px;
   font-weight: 700;
-   
   letter-spacing: 0.16em;
   line-height: 40px;
 	 margin:0 auto;
@@ -94,7 +104,8 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   padding: 0 14px;
   position: relative;
   text-align: center;
-  top: 91px;
+  text-transform: uppercase;
+  top: 110px;
   z-index: 9999;
 }
 .link-box a:hover { color: #93F80A }
@@ -128,7 +139,7 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   width: 59%;
 }
 .link-box img { width: 100%; max-width: 100% }
-.home { text-align: center; padding-top: 74px; }
+.row-home { text-align: center; padding-top: 74px; }
 /*----------------mid section styles ends here-------*/
 
 
@@ -141,12 +152,15 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
   text-align: left;
 }
 
+// Contact
+
 
 // About
 .page-template-template-about{
   blockquote{
     border: none;
     margin-bottom: 0px;
+    padding: 0px;
     p{
       color: #fff;
       text-transform: uppercase;
@@ -156,18 +170,22 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
       font-weight: 700;
     }
   }
+  .bg-bar-wrapper{
+    padding-left:0px;
+    margin-left: -30px; 
+  }
 }
 
 
 // Athletes
 .athletes{
   .section-right-content{
-    padding: 0px 80px;
   }
 
   .athlete{
     .text-center();
-    padding: 0px 50px;
+    text-transform: uppercase;
+    padding: 0px 40px;
     margin-bottom: 50px;
     .athlete-image img{
       margin: auto;
@@ -176,8 +194,10 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
     }
     .athlete-sport{
       margin-top: 10px;
+      margin-bottom: 10px;
       .small();
       font-weight: 100;
+
     }
     .athlete-team{
       .small();
@@ -206,6 +226,7 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
     a{
       text-transform: uppercase;
       .small();
+      text-decoration: none;
       cursor: pointer;
       &:hover,
       &.active{
@@ -228,18 +249,22 @@ a.btn:hover { background: url(../images/button-icon.png) no-repeat right 0 #C3D5
     }
     .vendor-details{
       margin-top: 15px;
-      letter-spacing: 2px;
+      letter-spacing: 0.02em;
       color: @brand-primary;
       padding-bottom: 20px;
       border-bottom: 1px solid @brand-primary;
       a{
-        text-decoration: underline !important;
+        text-decoration: none !important;
         &:hover{
-          text-decoration: none !important;
+          text-decoration: underline !important;
         }
       }
     }
   }
+}
+
+.link-distribute:hover{
+  .tada();
 }
 
 // Sidebar
@@ -299,6 +324,78 @@ footer { width: 100%; bottom: 0; position: absolute }
 .preloader { display: none; }
 .logo-sticky { display: none }
 /*----------------footer section styles ends here--------*/
+
+// Modal Styles
+.modal{
+
+  top: 100px;
+  z-index: 2000;
+}
+
+.modal-backdrop {
+  bottom: 0;
+  height: 110%;
+  z-index: 1090;
+}
+.modal-content{
+  border-width: 10px;
+  .modal-header{
+    border-bottom: none;
+    padding-bottom: 0px;
+    svg{
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .modal-title{
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+  }
+  .modal-body{
+    padding-top: 20px;
+    .gform_wrapper{
+      .validation_message{
+        color: #C1D52E;
+      }
+      .gform_description{
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 100;
+        font-family: 'Open Sans',sans-serif;
+      }
+      .gform_footer{
+        input[type=submit]{
+          background-color: #C1D52E;
+          &:hover{
+            .opacity(0.8);
+          }
+        }
+      }
+      .validation_error{
+        color: #C1D52E;
+        border-color: #C1D52E;
+      }
+      li.gfield{
+        &.gfield_error{
+          background-color: #fff;
+          border-color: #fff;
+        }
+      }
+      p{
+        color: #fff;
+        font-size: @font-size-large; 
+      }
+    }
+    .gform_confirmation_message{
+      color: #fff;
+      font-weight: 100;
+      font-family: 'Open Sans',sans-serif;
+    }
+  }
+}
 
 
 .fix-header .logo-sticky { display: block; position: absolute; left: 0; top: 4px; }
@@ -542,6 +639,7 @@ header{background:#1e2943;transition: none;}
 
 .ingredients {
   padding: 60px 0;
+  background-color: #e8e8e8;
 }
 
 .item-content {
@@ -608,6 +706,9 @@ header{background:#1e2943;transition: none;}
   }
 }
 
+body.page-template-template-product{
+  background: #f4f4f4;
+}
 .products-pages {
   .link-box {
     min-height: 550px;
@@ -644,6 +745,61 @@ header{background:#1e2943;transition: none;}
 
 .product-image {
   margin-bottom: 35px;
+        &:hover{
+        .tada();
+      }
+}
+
+// Single Product
+
+body.page-template-template-product .fw-right{
+  // background: #f6f6f6;
+}
+.product-info{
+  margin-top: 40px;
+  .panel-group{
+    .panel{
+      background: none;
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid @gray-light;
+      border-radius: 0px;
+      .panel-heading{
+        background: none;
+        border:none;
+        color: @brand-primary;
+        padding-right: 0px;
+        .panel-title{
+          text-transform: uppercase;
+          &:after{
+            font-family: FontAwesome;
+            content: "+";
+            display: inline-block;
+            float: right;
+          }
+        }
+        a{
+          &.collapsed{
+
+          } 
+          &:hover{
+            color: @brand-success;
+          }
+        }
+      }
+      >.panel-heading.active{
+        .panel-title{
+          &:after{
+            content: "-";
+          }
+        }
+      }
+      .panel-collapse.in,
+      .panel-collapse.collapsing{
+        border-top: 2px solid @brand-primary;
+      }
+    }
+  }
 }
 
 .about-image-3,.about-image-1 {

@@ -179,7 +179,7 @@
 
 
     if (Retina.isRetina()) {
-        Retina.init(root);
+       // Retina.init(root);
     }
 })();
 
