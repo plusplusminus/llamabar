@@ -6,7 +6,9 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h1 style="text-align:center;">404</h1>
+				<div class="section-right-title">
+					<h1 style="text-align:center;" class="title">404</h1>
+				</div>
 			</div>
 			<div class="col-md-12">
 					<p style="text-align:center;">Page Not Found.</p>
